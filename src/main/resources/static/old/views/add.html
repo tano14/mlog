@@ -1,0 +1,26 @@
+<h3>{{title}}</h3>
+<form name="addMlogForm" ng-submit="addMlog(mlog)" novalidate>
+  <div class="row">
+    <div class="col-md-7">
+      <fieldset class="form-group">
+        <label for="title">Titulo</label>
+        <input class="form-control" type="text" id="title" name="title" ng-model="mlog.title">
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="description">Contenido</label>
+        <textarea class="form-control" rows="15" cols="70" ng-model="mlog.content" id="content" name="content"></textarea>
+<!--         <input class="form-control" type="textarea" id="content" name="content" ng-model="mlog.content"> -->
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="title">Tags</label>
+        <input class="form-control" type="text" id="tags" name="tags" ng-model="mlog.tags">
+      </fieldset>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-11  col-md-offset-1">
+      <button type="submit" class="btn btn-default btn-search">Guardar</button>
+    </div>
+  </div>
+</form>

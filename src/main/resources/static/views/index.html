@@ -1,0 +1,72 @@
+<div class="row">
+
+    <!-- Blog Entries Column -->
+    <div class="col-md-8 well">
+		<div ng-repeat="mlog in mlogs | filter:search | orderBy:'publicationDate':true">
+	        <!-- First Blog Post -->
+	        <h2>
+	            <a href="#/mlog/{{mlog.id}}">{{mlog.title}}</a>
+	        </h2>
+	        <p>
+	            por <a href="#/">mi</a>
+	        </p>
+	        <p><span class="glyphicon glyphicon-time"></span> Publicado el {{mlog.publicationDate | date:"dd 'de' MMMM yyyy"}}</p>
+	        <hr>
+	        <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+	        <hr>
+	        <p>{{mlog.content |htmlToPlaintext | cut:200 }}</p>
+	        <a class="btn btn-primary" href="#/mlog/{{mlog.id}}">Seguir leyendo <span class="glyphicon glyphicon-chevron-right"></span></a>
+	
+	        <hr>
+		</div>
+
+
+        <!-- Pager -->
+        <ul class="pager">
+            <li class="previous">
+                <a href="#">&larr; Older</a>
+            </li>
+            <li class="next">
+                <a href="#">Newer &rarr;</a>
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- Blog Sidebar Widgets Column -->
+    <div class="col-md-4">
+
+        <!-- Blog Search Well -->
+        <div class="well">
+            <h4>Buscar</h4>
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="search.title">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <span class="glyphicon glyphicon-search"></span>
+                </button>
+                </span>
+            </div>
+            <!-- /.input-group -->
+        </div>
+
+        <!-- Blog Categories Well -->
+        <nw-category-selector></nw-category-selector>
+
+        <!-- Side Widget Well -->
+        <div class="well">
+			<div ng-repeat="mlog in mlogs | groupBy:'publicationDate'">
+			a
+			{{mlog.publicationDate}}
+				{{mlog.publicationDate}}
+<!-- 				<div ng-repeat=""> -->
+<!-- 				</div> -->
+			</div>
+        </div>
+
+    </div>
+
+</div>
+<!-- /.row -->
+
+<hr>

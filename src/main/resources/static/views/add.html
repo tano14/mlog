@@ -1,0 +1,36 @@
+<div class="well">
+<h3>{{title}}</h3>
+<form name="addMlogForm" ng-submit="addMlog(mlog)" novalidate>
+  <div class="row">
+    <div class="col-md-9">
+      <fieldset class="form-group">
+        <label for="title">Titulo</label>
+        <input class="form-control" type="text" id="title" name="title" ng-model="mlog.title">
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="description">Contenido</label>
+        <textarea ui-tinymce="tinymceOptions" ng-model="mlog.content"></textarea>
+<!--         <input class="form-control" type="textarea" id="content" name="content" ng-model="mlog.content"> -->
+      </fieldset>
+    </div>
+     <div class="col-md-2">
+       <div class="row">
+		    <label for="title">Imagen del post</label>
+		    <input type="file" ng-model="mlog.mainImage">
+       </div>
+  		 <div class="row">
+		  <fieldset class="form-group">
+		    <label for="title">Categorias</label>
+		    <input class="form-control" type="text" id="tags" name="tags" ng-model="mlog.categories">
+		  </fieldset>
+		</div>
+     </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-11  col-md-offset-1">
+      <button type="submit" class="btn btn-default btn-search">Guardar</button>
+    </div>
+  </div>
+</form>
+</div>
