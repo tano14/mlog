@@ -1,6 +1,7 @@
 package ar.com.tano.mlog.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class MLogDTO {
 	private Long id;
@@ -8,7 +9,7 @@ public class MLogDTO {
 	private String content;
 	private Date publicationDate;
 	private Date modificationDate;
-	private String categories;
+	private List<String> categories;
 	private byte[] mainImage;
 	
 	public String getTitle() {
@@ -35,10 +36,10 @@ public class MLogDTO {
 	public void setModificationDate(Date modificationDate) {
 		this.modificationDate = modificationDate;
 	}
-	public String getCategories() {
+	public List<String> getCategories() {
 		return categories;
 	}
-	public void setCategories(String categories) {
+	public void setCategories(List<String> categories) {
 		this.categories = categories;
 	}
 	public byte[] getMainImage() {

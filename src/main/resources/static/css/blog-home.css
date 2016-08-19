@@ -17,3 +17,41 @@ footer {
 .well {
 	background-color: #C8F7C5;
 }
+
+ul.applied-categories {
+    display: inline-block;
+    margin-bottom: 15px;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+ul.applied-filters li {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+ul.applied-filters li span a i{
+	color: #fff;
+}
+
+ul.applied-filters li .badge {
+    background: #f60e39;
+    font-size: 80%;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, ul, li {
+    word-wrap: break-word;
+    word-break: break-word;
+}
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 10.5px;
+}
+.badge {
+    border-radius: 0;
+    font-weight: 400;
+    font-size: 11px;
+    padding: 10px;
+}

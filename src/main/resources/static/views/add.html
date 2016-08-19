@@ -21,8 +21,27 @@
   		 <div class="row">
 		  <fieldset class="form-group">
 		    <label for="title">Categorias</label>
-		    <input class="form-control" type="text" id="tags" name="tags" ng-model="mlog.categories">
+		    <div class="input-group">
+		    	<input class="form-control" type="text" id="category">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="addCategory()">
+                        <span class="glyphicon glyphicon-plus"></span>
+                	</button>
+                </span>
+            </div>
+		    
+<!-- 		    ng-model="mlog.categories" -->
 		  </fieldset>
+		</div>
+		<div class="row">
+			<ul class="applied-categories">
+				<li ng-repeat="category in mlog.categories">
+					<span class="badge">
+						{{category}}
+						<a href="" ng-click="removeCategory(category)"><i class="glyphicon glyphicon-remove"></i></a>
+					</span>
+				</li>
+			</ul>
 		</div>
      </div>
   </div>

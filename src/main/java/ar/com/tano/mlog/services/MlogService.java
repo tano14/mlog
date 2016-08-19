@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -13,7 +12,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
-import org.springframework.util.StringUtils;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -103,10 +101,7 @@ public class MlogService {
 			mlog.setPublicationDate(new Date());
 		}
 		
-		if(!StringUtils.isEmpty(dto.getCategories())){
-			String[] tags = dto.getCategories().split(";");
-			mlog.setCategories(Arrays.asList(tags));
-		}
+		mlog.setCategories(dto.getCategories());
 		
 		return mlog;
 	}
@@ -136,7 +131,7 @@ public class MlogService {
 		dto.setContent(mlog.getContent());
 		dto.setPublicationDate(mlog.getPublicationDate());
 		if(!CollectionUtils.isEmpty(mlog.getCategories())){
-			dto.setCategories(mlog.getCategories().toString());
+			dto.setCategories(mlog.getCategories());
 		}
 		dto.setMainImage(mlog.getMainImage());
 		dto.setModificationDate(mlog.getModificationDate());
