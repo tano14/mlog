@@ -24,8 +24,11 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
 			file.setReadable(Boolean.TRUE);
 			file.setWritable(Boolean.TRUE);
 			file.setExecutable(Boolean.TRUE);
-			file.createNewFile();
-			System.out.println("---ARCHIVO JSON CREADO");
+			if (file.createNewFile()){
+				System.out.println("---ARCHIVO JSON CREADO");
+			} else {
+				System.out.println("---ARCHIVO JSON EXISTENTE");
+			}
 		} catch (IOException e) {
 			System.out.println("---NO SE PUDO CREAR EL ARCHIVO JSON");
 		}
