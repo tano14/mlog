@@ -8,6 +8,20 @@ app.controller('editMlogController',function($scope,$routeParams,Mlog,$location)
 		});
 	};
 	
+	$scope.addCategory=function(){
+		if($scope.mlog.categories == null){
+			$scope.mlog.categories=[];
+			
+		}
+		$scope.mlog.categories.push($("#category").val());
+		$("#category").val('');
+	};
+	
+	$scope.removeCategory=function(category){
+		var index = $scope.mlog.categories.indexOf(category);
+		$scope.mlog.categories.splice(index,1);
+	};
+	
 	$scope.tinymceOptions={
 			menubar: false,
 			height : 400,

@@ -6,7 +6,8 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    background-color: #90c695;
+    background-color: #fff;
+/*     background-color: #90c695; */
 }
 
 
@@ -54,4 +55,8 @@ ul, ol {
     font-weight: 400;
     font-size: 11px;
     padding: 10px;
+}
+
+span {
+	margin-left: 3px;
 }
